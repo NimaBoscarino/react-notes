@@ -2,7 +2,9 @@ W6D1 - React
 ============
 
 REPO: https://github.com/NimaBoscarino/react-notes
+
 [Scrimba (Recording for the first half of the lecture)](https://scrimba.com/c/c2mBBs2)
+
 [Take a look at the React boilerplate](https://github.com/lighthouse-labs/react-simple-boilerplate)
 
 Welcome to React!
