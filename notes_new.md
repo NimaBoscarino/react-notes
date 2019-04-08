@@ -1,14 +1,48 @@
-# W4D1 - React
+# WELCOME BACK!\
 
-REPO: https://github.com/NimaBoscarino/react-notes
+# W 6 D 1: 
 
-Note! You can run the example by `npm i`nstalling, and then running `npm start` and navigating to `localhost:3000` in your browser.
+- Recursion
 
-[Take a look at the React boilerplate](https://github.com/lighthouse-labs/react-simple-boilerplate)
 
-Welcome to React!
 
-React is a *framework*. Frameworks are a subset of libraries. They are libraries that hel up build things faster, by buying into an ecosystem. Frameworks have **opinions** on how you should do things, and **abstractions** to help with efficiency.
+REACT
+=======
+
+- client-side framework
+- making the process of building UIs nice and easy
+  - front end
+
+What is the gimmick?
+
+```
+$('<h1>').html('haha').attr('class', 'besth1')
+```
+
+Why do client-side frameworks exist?
+
+What are the challenges of SPAs?
+- Shift in business logic
+- Change in backend role (API)
+- Security
+
+What are components? (compare with ejs partials)
+
+Thinking in React
+
+Plan: How do we break up a User Inteface into components?
+
+Build simple static components (no logic, just rendering html)
+
+Make a complete list of all UI state required by the app
+
+For each component, what part of the state does the component need to receive?
+
+MVVM
+
+- We are making our UI react to some data
+
+
 
 React's opinions:
 
@@ -18,13 +52,11 @@ React's opinions:
 - Strict opinions on data flow (from parent to child)
     - "Data down, actions up!"
 
-React's main abstraction or gimmick:
+React's main abstraction:
 
 - Components!
 
-Everything in the design of React is built around the idea of components.
-
-## Components
+# Components
 
 ```js
 class SomeComponent extends React.Component {
@@ -38,7 +70,7 @@ Components are pieces of reusable visual bits that we'll use to build our apps. 
 
 Components can have other components *nested* as **children**. A parent component can pass **props** down to a child component. Each component has its own **state**.
 
-## JSX - Javascript + XML
+# JSX - Javascript + XML
 
 JSX is a superset of Javascript. It lets embed Javascript in the HTML that we want our components to return. There are some rules to writing valid JSX. Here are some of them: 
 
@@ -52,7 +84,7 @@ JSX is a superset of Javascript. It lets embed Javascript in the HTML that we wa
 }
 ```
 
-## Dynamic Data
+# Dynamic Data
 
 To dynamically render components, we could use ternary operators in curly braces.
 
@@ -68,7 +100,7 @@ render() {
 
 We could also move the conditial out to a function, and call that. Remember that in JSX we can only have **one** expression within curly braces at a time, so we cannot write if-else statements.
 
-## Looping
+# Looping
 
 ```js
 {
@@ -78,34 +110,9 @@ We could also move the conditial out to a function, and call that. Remember that
 
 Has to be done with `map`, not `forEach`. JSX can render array elements as siblings.
 
-## Flow of Data
+# Flow of Data
 
-In the lecture we talked about props. Props are values that can be passed to a component when it gets instantiated. "Passing props" looks like this:
-
-```
-<SomeCoolComponent
-    prop1="haha!"
-    prop2="woo!"
-/>
-```
-
-And the props can be accessed from _within_ the particular component like this:
-
-```
-// inside the class SomeCoolComponent
-
-render() {
-    console.log(this.props.prop1) // haha!
-    
-    return (
-        <h1>{this.props.prop2}</h2>
-    )
-}
-```
-
-Props can be **anything**. This means _any_ JavaScript value, including strings, numbers, objects, functions, etc. We'll explore that idea in the breakout and tomorrow.
-
-There are two sources of data for a component: State and Props. State is LOCAL to a component. We'll talk about it in the breakout. You can set the initial state in the constructor:
+There are two sources: State and Props. State is LOCAL to a component. You can set the initial state in the constructor:
 
 ```js
 this.state = {
@@ -114,5 +121,7 @@ this.state = {
 ```
 
 Outside of the constructor, we will call `this.setState()` to set the state. **NOT** `this.state = ...`.
+
+Take a look at the Scrimba recording (linked up top) and the code in this project (under `src`) to see examples of all this stuff in action.
 
 Cheers! - Nima

@@ -1,85 +1,120 @@
 import React, { Component } from 'react'
 
-const songLyrics = [
-  `Very rarely do you catch me out 'all done specially invited guest'd me out`,
-  `Y'all been tellin' jokes that's gon' stress me out
-  Soon as I walk in, I'm like, "Let's be out"`,
-  `I was off the chain, I was often drained
-  I was off the meds, I was called insane`
-]
 
-class App extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      latestLyric: 0
-    }
-
-    this.updateLatestLyric = this.updateLatestLyric.bind(this)
-  }
-
-  updateLatestLyric (index) { // updateLatestLyric(100) -> state.latestLyric = 100
-    this.setState({
-      latestLyric: index
-    })
-  }
-
-  render () {
+class VideoBlock extends Component {
+  render() {
+    console.log('I AM RENDER', this)
     return (
-      <div>
-        <h1>Latest Lyric {this.state.latestLyric}</h1>
-        <SongLyricContainer cb={this.updateLatestLyric} />
-        <SongLyricContainer cb={this.updateLatestLyric} />
-        <SongLyricContainer cb={this.updateLatestLyric} />
+      <div className="video-block">
+        <img
+          className="thumbnail"
+          src={this.props.thumbnail} />   
+        <div>   
+          <h2>{this.props.title}</h2>
+          <p>{this.props.description}</p>
+        </div>
       </div>
     )
   }
 }
 
-class SongLyricContainer extends Component {
-  constructor (props) {
-    super(props)
+function dog() {
+  return "Woof!"
+}
 
-    this.stateasdasd = {
-      lyricIndex: 0
-    }
 
-    this.nextLyric = this.nextLyric.bind(this)
-    this.previousLyric = this.previousLyric.bind(this)
-  }
-
-  previousLyric () {
-    let nextIndex = this.stateasdasd.lyricIndex - 1
-    this.setState({
-      lyricIndex: nextIndex
-    })
-
-    this.props.cb(nextIndex)
-  }
-
-  nextLyric () {
-    let nextIndex = this.stateasdasd.lyricIndex + 1
-    this.setState({
-      lyricIndex: nextIndex
-    })
-
-    this.props.cb(nextIndex)
-  }
-
-  render () {
+const videos = [
+  {
+    title: "Eric Andre on the New York Subway",
+    description: "Haha what crazy hijinks!",
+    thumbnail: "https://i.ytimg.com/vi/9UlXcoVHnog/hqdefault.jpg"
+  },
+  {
+    title: "Kanye - Spaceship",
+    description: "Wow - what an artist!",
+    thumbnail: "https://i.ytimg.com/vi/LUuWrU25j0k/hqdefault.jpg"
+  },
+  {
+    title: "Cats - 🐈",
+    description: "Number 8 will blow your mind!",
+    thumbnail: "https://i.ytimg.com/vi/dzfR1PEm8NM/hqdefault.jpg"
+  },
+  {
+    title: "Is this an Instrument? 🥚",
+    description: "Doctors HATE him!",
+    thumbnail: "https://i.ytimg.com/vi/d1JA-nh0IfI/hqdefault.jpg"
+  },
+  {
+    title: "SpongeBob",
+    description: "Doctors HATE him!",
+    thumbnail: "https://i.ytimg.com/vi/d1JA-nh0IfI/hqdefault.jpg"
+  }               
+]
+class App extends Component {
+  render() {
     return (
-      <div>
-        <div>
-          <button onClick={this.previousLyric}>Prev</button>
-          <button onClick={this.nextLyric}>Next</button>
-        </div>
-        <p>{songLyrics[this.stateasdasd.lyricIndex]}</p>
-      </div>
-    )
+      <div>   
+        {
+          videos.map(video => {
+            return (
+              <VideoBlock
+                title={video.title}
+                description={video.description}
+                thumbnail={video.thumbnail}
+              />
+            )
+          })
+        }
+
+
+      </div>                       
+    );
   }
 }
 
 export default App
 
-// const Welcome = (props) => <button>Howdy doo{props.name}</button>
+
+/*
+
+      <VideoBlock
+          title="Eric Andre on the New York Subway"
+          description="Haha what crazy hijinks!"
+          thumbnail="https://i.ytimg.com/vi/9UlXcoVHnog/hqdefault.jpg"
+        />
+        <VideoBlock
+          title="Kanye - Spaceship"
+          description="Wow - what an artist!"  
+          thumbnail="https://i.ytimg.com/vi/LUuWrU25j0k/hqdefault.jpg"
+        />
+        <VideoBlock
+          title="Cats - 🐈"
+          description="Number 8 will blow your mind!" 
+          thumbnail="https://i.ytimg.com/vi/dzfR1PEm8NM/hqdefault.jpg"
+        />
+        <VideoBlock
+          title="Is this an Instrument? 🥚"
+          description="Doctors HATE him!"
+          thumbnail="https://i.ytimg.com/vi/d1JA-nh0IfI/hqdefault.jpg"
+        />
+
+
+        
+*/
+
+
+    // In the curlies:
+
+    /*
+      - strings
+      - numbers
+      - do math, one line!
+      - concatenate things
+      - call a function
+        - getData()
+        - getData() ; showData() <---- BAD!
+        - getData(() => showData())
+      - show arrays of stuff
+    
+
+    */
