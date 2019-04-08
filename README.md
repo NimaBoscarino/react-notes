@@ -8,7 +8,7 @@ Note! You can run the example by `npm i`nstalling, and then running `npm start` 
 
 Welcome to React!
 
-React is a *framework*. Frameworks are a subset of libraries. They are libraries that hel up build things faster, by buying into an ecosystem. Frameworks have **opinions** on how you should do things, and **abstractions** to help with efficiency.
+React is a *framework*. Frameworks are a subset of libraries. They are libraries that help build things faster, by buying into an ecosystem. Frameworks have **opinions** on how you should do things, and **abstractions** to help with efficiency.
 
 React's opinions:
 
