@@ -91,29 +91,29 @@ For each component, what customization does the component need to receive? (prop
 
 FOR BREAKOUT:
 
+Note! YOU CAN WRITE FUNCTIONS AS ARROW FUNCTIONS TO AVOID BINDING.
+
+Otherwise, whenever you have a helper function that calls `this` (e.g. `this.setState` or `this.props`) you'll need to bind it in your constructor. See the code for examples.
 
 Props and state
-Functional Components vs Class Components
-JSX declarative syntax
-if statements in jsx
-loops in jsx
-jsx tips and gotchas
-how jsx works behind the scenes (briefly)
-ES6 classes and how to read ES5 (old) React syntax
 
-Props vs State
-Use of setState()
-How to "think" in components
-Parallels to wireframing
-Starting from static pages, then refactoring into components
-How to identify where <App />, <Header />, etc components might go
-Scope!
-Use of .bind(this)
-How
-More importantly - Why
-jsx tips and gotchas include:
-class vs className
-every tag needs to be closed
-key attributes in loops
-it is possible to use { debugger } in jsx
-Quotation marks vs interpolation in property values (Ex: className="{this.props.class}" vs. className={this.props.class})
+- Props are things that components receive
+- state is what a component HAS, or "thinks about"
+- state lets me remember things
+  - read state as this.state.asdasdasd
+  - update state with this.setState({ changes go in here })
+
+Functional Components vs Class Components
+
+- functionals cannot have state! But they're nicer to read.
+- Class components: can have state! And also... can tap into "lifecycle methods"
+
+if statements in jsx
+
+- HONESTLY, Just use helper functions.
+- You CAN be clever and use ternaries, but I wouldn't stress about it.
+
+loops in jsx
+
+- do them with .map
+- See the examples

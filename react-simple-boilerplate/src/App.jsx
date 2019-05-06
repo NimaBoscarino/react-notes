@@ -32,34 +32,67 @@ class VideoTile extends Component {
 }
 
 class VideoContainer extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      videos: [
+        {
+          title: 'Power',
+          time: '4:21',
+          username: 'xXYeezyFanXx',
+          likes: 4
+        },
+        {
+          title: 'Spaceship',
+          time: '6:11'  ,
+          username: 'yeezyGirl6182',
+          likes: 1337,
+        },
+        {
+          title: 'I AM A GOD',
+          time: '1:34',
+          username: 'xXSlayerOfHackz0rzXx',  
+          likes: 4145123,
+        },
+        {
+          title: 'Gold Digger',
+          time: '5:24',
+          username: '746352ILuvKanye',  
+          likes: 62,
+        }        
+      ]
+    }
+  }
+
+  addSong = () => {
+    this.setState({
+      videos: [...this.state.videos, {
+        title: 'Croissants',
+        time: '5:24',
+        username: 'croissants',  
+        likes: 62,
+      }]
+    })
+  }
   render() {
     return (
       <div>
-        <VideoTile 
-          title={'Power'}
-          time={'4:21'}
-          username={'xXYeezyFanXx'}
-          likes={4}
-          funStuff={{
-            hello: 'world',
-            suh: 'mydude'
-          }}
-          onClick={() => console.log('HJAGSDASD')}
-        />
-        <VideoTile
-          title='Spaceship'
-          time='6:11'  
-          username='yeezyGirl6182'   
-          likes={1337}
-          onClick={() => console.log('BOO!')}
-        />
-        <VideoTile
-          title='I AM A GOD'
-          time='1:34'
-          username='xXSlayerOfHackz0rzXx'     
-          likes={4145123}
-          onClick={() => console.log('YEEZY!')}
-        />
+        {
+          this.state.videos.map(video => {
+            return (
+              <VideoTile 
+                key={video.title}
+                title={video.title}
+                time={video.time}
+                username={video.username}
+                likes={video.likes}
+              />              
+            )
+          })
+        }
+        
+        <button onClick={this.addSong}>Add Song</button>
       </div>
     )
   }
