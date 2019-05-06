@@ -2,11 +2,15 @@
 
 REPO: https://github.com/NimaBoscarino/react-notes
 
-Note! You can run the example by `npm i`nstalling, and then running `npm start` and navigating to `localhost:3000` in your browser.
+*For the notes from class, look at the `notes.md` file.*
+
+Note! There are multiple examples in this repo. The one that we built is inside of `react-simple-boilerplate`. If you `cd` into that directory, you can run `npm i` and then `npm start` to run it, and go to `localhost:3000` to see the project running.
+
+There's another example at the root of this project! It explores some extra stuff with state. If you're feeling adventurous, you can run the example by `npm i`nstalling, then running `npm start` and navigating to `localhost:3000` in your browser.
 
 [Take a look at the React boilerplate](https://github.com/lighthouse-labs/react-simple-boilerplate)
 
-Welcome to React!
+## Welcome to React!
 
 React is a *framework*. Frameworks are a subset of libraries. They are libraries that help build things faster, by buying into an ecosystem. Frameworks have **opinions** on how you should do things, and **abstractions** to help with efficiency.
 
@@ -114,5 +118,14 @@ this.state = {
 ```
 
 Outside of the constructor, we will call `this.setState()` to set the state. **NOT** `this.state = ...`.
+
+## My "Welcome Back" Poem for You
+
+```
+Empty class
+Lighthouse off
+Waves crashing
+When will you come back
+```
 
 Cheers! - Nima
