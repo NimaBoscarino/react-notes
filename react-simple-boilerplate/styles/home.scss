@@ -1,3 +1,37 @@
 h1 {
   color: tomato;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.video-container {
+  background: blue;
+  width: 70%;
+}
+
+.video-suggestions-list {
+  background: red;
+  width: 30%;
+}
+
+.video-suggestion {
+  background: yellow;
+  display: flex;
+  flex-direction: row;
+  height: 75px;
+
+  h2 {
+    font-size: 15px;
+  }
+
+  img {
+    width: 45%;
+  }
+}
+
+.video {
+  width: 100%;
+}

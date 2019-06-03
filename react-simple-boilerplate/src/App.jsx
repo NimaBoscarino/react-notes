@@ -1,109 +1,83 @@
 import React, { Component } from 'react';
 
-class Yeezy extends Component {
+class VideoContainer extends Component {
   render() {
     return (
-      <div>
-        <p>YEEZY</p>
-        <img src='https://66.media.tumblr.com/tumblr_m31scizkkw1rue873o1_250.png' />
+      <div className="video-container">
+        <img className="video" src="http://www.pethealthnetwork.com/sites/default/files/articles/five-adorable-dog-videos-make-you-ache-spring-fb-517235671.jpg" />
+        <h2>Cute dog video</h2>
       </div>
     )
   }
 }
 
-class VideoTile extends Component {
+class VideoSuggestionsList extends Component {
+
   render() {
-    `Haha my name is ${name}`
-    
+
+    var func = () => console.log('heyooo')
+    var videos = [
+      {
+        title: "Awesome dogs",
+        src: "https://cdn2-www.dogtime.com/assets/uploads/2015/04/april-fools-dog-pranks-youtube-1.jpg", 
+      },
+      {
+        title: "Wow I love cats",
+        src: "https://cdn2-www.dogtime.com/assets/uploads/2015/04/april-fools-dog-pranks-youtube-1.jpg", 
+      },
+      {
+        title: "Did you know about...",
+        src: "https://cdn2-www.dogtime.com/assets/uploads/2015/04/april-fools-dog-pranks-youtube-1.jpg", 
+      },
+      {
+        title: "Platypi are evil",
+        src: "https://cdn2-www.dogtime.com/assets/uploads/2015/04/april-fools-dog-pranks-youtube-1.jpg", 
+      },
+      {
+        title: "Fish can also be cute",
+        src: "https://cdn2-www.dogtime.com/assets/uploads/2015/04/april-fools-dog-pranks-youtube-1.jpg", 
+      },                
+    ]    
     return (
-      <div
-        className='video-tile'
-        onClick={this.props.onClick}
-      >
-        <img className='thumbnail' src="https://i.imgur.com/n4QLMVU.jpg" />
-        <div>
-          <h2>{this.props.title}</h2>
-          <p>{this.props.username}</p>
-          <p>{this.props.time} - Likes: {this.props.likes}</p>
-        </div>
-      </div>        
-    )
-  }
-}
-
-class VideoContainer extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      videos: [
+      <div className="video-suggestions-list">
         {
-          title: 'Power',
-          time: '4:21',
-          username: 'xXYeezyFanXx',
-          likes: 4
-        },
-        {
-          title: 'Spaceship',
-          time: '6:11'  ,
-          username: 'yeezyGirl6182',
-          likes: 1337,
-        },
-        {
-          title: 'I AM A GOD',
-          time: '1:34',
-          username: 'xXSlayerOfHackz0rzXx',  
-          likes: 4145123,
-        },
-        {
-          title: 'Gold Digger',
-          time: '5:24',
-          username: '746352ILuvKanye',  
-          likes: 62,
-        }        
-      ]
-    }
-  }
-
-  addSong = () => {
-    this.setState({
-      videos: [...this.state.videos, {
-        title: 'Croissants',
-        time: '5:24',
-        username: 'croissants',  
-        likes: 62,
-      }]
-    })
-  }
-  render() {
-    return (
-      <div>
-        {
-          this.state.videos.map(video => {
-            return (
-              <VideoTile 
-                key={video.title}
-                title={video.title}
-                time={video.time}
-                username={video.username}
-                likes={video.likes}
-              />              
+          videos.map(v => {
+            return(
+              <VideoSuggestion
+                title={v.title}
+                src={v.src}
+                func={func}
+              />
             )
           })
         }
-        
-        <button onClick={this.addSong}>Add Song</button>
+
       </div>
     )
   }
 }
 
-class Main extends React.Component {
+class VideoSuggestion extends Component {
   render() {
-    
+    console.log(this.props)
+    this.props.func()
+
     return (
-      <VideoContainer>
-      </VideoContainer>
+      <div className="video-suggestion">
+        <img src={this.props.src} />
+        <h2>{ this.props.title }</h2>
+      </div>
+    )
+  }
+}
+
+class Main extends Component {
+  render() {
+    return (
+      <div className="container">
+        <VideoContainer />
+        <VideoSuggestionsList />
+      </div>
     );
   }
 }
